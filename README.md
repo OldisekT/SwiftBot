@@ -1,0 +1,2 @@
+# SwiftBot
+Swift Discoed bot
