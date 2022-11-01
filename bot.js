@@ -1,21 +1,4 @@
-/*                                                                                                                                     */var TOKEN = "";
-
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
+var TOKEN = ""; //Your token
 const mc = require("minecraft-server-status-simple");
 const { ButtonBuilder, ButtonStyle } = require('discord.js');
 const { Client, GatewayIntentBits } = require('discord.js');
@@ -28,9 +11,6 @@ const { r1 , r2 ,r3 ,r4,r5 , r1m , r2m , r3m , r4m , r5m} = require('./config.js
 let rtrue = "";
 let rtrue2 = "";
 let rtrue3 = "";
-
-
-
 
 mc.status({
   type: "java",
@@ -124,79 +104,23 @@ client.on('interactionCreate', async interaction => {
   //   - - - - - - - -  BUTTONS  - - - - - - - - - \\
   if (interaction.isButton()) {
     const buttonID = interaction.customId;
-    if (buttonID === 'ButtonRoles') { // get button by customId set below
-      const member = interaction.member; // get member from the interaction - person who clicked the button
+    if (buttonID === 'ButtonRoles') { 
+      const member = interaction.member; 
 
-      if (member.roles.cache.has('1036260298589487104')) { // if they already have the role
-        member.roles.remove('1036260298589487104'); // remove it
+      if (member.roles.cache.has('1036260298589487104')) {
+        member.roles.remove('1036260298589487104'); 
         return interaction.reply({
           content: 'Successfully removed role!',
           ephemeral: true
         });
-      } else { // if they don't have the role
-        member.roles.add('1036260298589487104'); // add it
+      } else { 
+        member.roles.add('1036260298589487104'); 
         return interaction.reply({
           content: 'Successfully added role!',
           ephemeral: true
         })
       }
     }
-
-    if (buttonID === 'role_all') { // get button by customId set below
-      const member = interaction.member; // get member from the interaction - person who clicked the button
-
-      if (member.roles.cache.has('1036716266108497970')) { // if they already have the role
-        member.roles.remove('1036716266108497970'); // remove it
-        return interaction.reply({
-          content: 'Byla ti vymazána role: `@ping`!',
-          ephemeral: true
-        });
-      } else { // if they don't have the role
-        member.roles.add('1036716266108497970'); // add it
-        return interaction.reply({
-          content: 'Byla ti přidaná role `@ping`!',
-          ephemeral: true
-        })
-      }
-    }
-
-    if (buttonID === 'role_mc') { // get button by customId set below
-      const member = interaction.member; // get member from the interaction - person who clicked the button
-
-      if (member.roles.cache.has('1036716106041266206')) { // if they already have the role
-        member.roles.remove('1036716106041266206'); // remove it
-        return interaction.reply({
-          content: 'Byla ti vymazána role: `@mc`!',
-          ephemeral: true
-        });
-      } else { // if they don't have the role
-        member.roles.add('1036716106041266206'); // add it
-        return interaction.reply({
-          content: 'Byla ti přidaná role `@mc`!',
-          ephemeral: true
-        })
-      }
-    }
-
-    if (buttonID === 'role_dis') { // get button by customId set below
-      const member = interaction.member; // get member from the interaction - person who clicked the button
-
-      if (member.roles.cache.has('1036716209460228136')) { // if they already have the role
-        member.roles.remove('1036716209460228136'); // remove it
-        return interaction.reply({
-          content: 'Byla ti vymazána role: `@dis`!',
-          ephemeral: true
-        });
-      } else { // if they don't have the role
-        member.roles.add('1036716209460228136'); // add it
-        return interaction.reply({
-          content: 'Byla ti přidaná role `@dis`!',
-          ephemeral: true
-        })
-      }
-    }
-
-
  }
   
   //   - - - - - - - - # # # # INTERACTIONS # # # # - - - - - - - - - \\
